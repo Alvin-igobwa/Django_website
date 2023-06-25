@@ -1,0 +1,26 @@
+<!-- the notation below tells html to run it without showing the output on the website -->
+{% extends 'base.html' %}
+
+{% block content%}
+<div style = "border: 2px solid #000;">
+    <h1>This is the body</h1>
+    <p>This is where you put stuff of what should be in the body</p>
+   
+    <!-- The use of the double braces is used to show the text that I had described before as long as I write the right name of the variable in the context dictionary  -->
+    <p>{{some_string}}</p>
+    <p>{{some_number}}</p>
+    
+    <!-- adding a for loop in adidng stuff in  -->
+    {% for list_items in list_of_values %}
+    {% include 'personal/snippets/body_snippet.html' with value=list_items %}
+    {% endfor %}
+
+    <!-- adding a p tag separates different contents -->
+
+
+    {% include 'personal/snippets/body_snippet.html' %}
+
+</div>
+
+
+{% endblock content %}
